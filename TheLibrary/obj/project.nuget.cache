@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ROPVcJoCankIX4Gt1vlR6IKB/kwzGwBI3WxyD6Egs3unQNjbTmybm7W/NejJ7M3X/LttnOaAGz1DT+mXVFmGMQ==",
+  "success": true,
+  "projectFilePath": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/TheLibrary.csproj",
+  "expectedPackageFiles": [
+    "/Users/sundehakon/.nuget/packages/microsoft.netcore.app.ref/7.0.14/microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/sundehakon/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/sundehakon/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.14/microsoft.netcore.app.host.osx-arm64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
