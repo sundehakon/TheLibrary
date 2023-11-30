@@ -57,6 +57,102 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/1984.jpeg",
+      "PackagePath": "staticwebassets/images/1984.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/american-psycho.jpg",
+      "PackagePath": "staticwebassets/images/american-psycho.jpg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/biblecover.jpeg",
+      "PackagePath": "staticwebassets/images/biblecover.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/bluebookshelf.jpeg",
+      "PackagePath": "staticwebassets/images/bluebookshelf.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/communistmanifesto.jpeg",
+      "PackagePath": "staticwebassets/images/communistmanifesto.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/dearmartin.jpeg",
+      "PackagePath": "staticwebassets/images/dearmartin.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/elonmusk.jpg",
+      "PackagePath": "staticwebassets/images/elonmusk.jpg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/faviconlogo.jpeg",
+      "PackagePath": "staticwebassets/images/faviconlogo.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/faviconlogo1.png",
+      "PackagePath": "staticwebassets/images/faviconlogo1.png"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/faviconlogo2.webp",
+      "PackagePath": "staticwebassets/images/faviconlogo2.webp"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/forceofnature.jpeg",
+      "PackagePath": "staticwebassets/images/forceofnature.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/github.png",
+      "PackagePath": "staticwebassets/images/github.png"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/harrypotter.webp",
+      "PackagePath": "staticwebassets/images/harrypotter.webp"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/harvardlibrary.jpeg",
+      "PackagePath": "staticwebassets/images/harvardlibrary.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/harvardlibraryimage.jpeg",
+      "PackagePath": "staticwebassets/images/harvardlibraryimage.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/headerlogo.jpeg",
+      "PackagePath": "staticwebassets/images/headerlogo.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/honkichi_aboutimg.jpg",
+      "PackagePath": "staticwebassets/images/honkichi_aboutimg.jpg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/library.webp",
+      "PackagePath": "staticwebassets/images/library.webp"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/libraryimage.avif",
+      "PackagePath": "staticwebassets/images/libraryimage.avif"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/librarylogo.png",
+      "PackagePath": "staticwebassets/images/librarylogo.png"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/oldlibrary.avif",
+      "PackagePath": "staticwebassets/images/oldlibrary.avif"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/redbook.jpeg",
+      "PackagePath": "staticwebassets/images/redbook.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/images/richdad.jpeg",
+      "PackagePath": "staticwebassets/images/richdad.jpeg"
+    },
+    {
+      "Id": "/Users/sundehakon/Desktop/TheLibrary/TheLibrary/wwwroot/script.js",
+      "PackagePath": "staticwebassets/script.js"
+    },
+    {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.TheLibrary.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

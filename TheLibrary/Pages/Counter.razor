@@ -1,18 +1,147 @@
 ﻿@page "/counter"
+@inject NavigationManager Navigation
+@inject BasketService BasketService
 
-<PageTitle>Counter</PageTitle>
+<h1>Add books to your basket</h1>
 
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<div class="book-layout">
+    <div id="book-box1" class="book-box">
+        <img class="counter-images" id="bible-cover" src="/images/biblecover.jpeg" alt="Cover of the bible" @onclick="NavigateToBible">
+        <div class="booktitle">
+            <p>"The Bible"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="() => AddBookToBasket(bible)">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box2" class="book-box">
+        <img class="counter-images" id="richdad-cover" src="/images/richdad.jpeg" alt="Cover of 'Rich Dad, Poor Dad'" @onclick="NavigateToRichdad">
+        <div class="booktitle">
+            <p>"Rich Dad, Poor Dad"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box3" class="book-box">
+        <img class="counter-images" id="american-psycho-cover" src="/images/american-psycho.jpg" alt="Cover of American Psycho" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"American Psycho"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="() => AddBookToBasket(americanpsycho)">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box4" class="book-box">
+        <img class="counter-images" id="philosophers-stone-cover" src="/images/harrypotter.webp" alt="Cover of Harry Potter and The Philosophers Stone" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle-two-lines">
+            <p>"Harry Potter - The Philosophers Stone"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box5" class="book-box">
+        <img class="counter-images" id="redbook-cover" src="/images/redbook.jpeg" alt="Cover of The Red Book" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"The Red Book"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box6" class="book-box">
+        <img class="counter-images" id="elonmusk-cover" src="/images/elonmusk.jpg" alt="Cover of Elon Musk" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"Elon Musk"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box7" class="book-box">
+        <img class="counter-images" id="forceofnature-cover" src="/images/forceofnature.jpeg" alt="Cover of Force Of Nature" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"Force Of Nature"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box8" class="book-box">
+        <img class="counter-images" id="communistmanifesto-cover" src="/images/communistmanifesto.jpeg" alt="Cover of The Communist Manifesto" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle-two-lines">
+            <p>"The Communist Manifesto"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box9" class="book-box">
+        <img class="counter-images" id="1984-cover" src="/images/1984.jpeg" alt="Cover of 1984" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"1984"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+    <div id="book-box10" class="book-box">
+        <img class="counter-images" id="dearmartin-cover" src="/images/dearmartin.jpeg" alt="Cover of Dear Martin" @onclick="NavigateToEncyclopedia">
+        <div class="booktitle">
+            <p>"Dear Martin"</p>
+        </div>
+        <div class="button-25">
+            <button @onclick="NavigateToFetchData">
+                <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
+            </button>
+        </div>
+    </div>
+</div>
 
 @code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+    private void NavigateToFetchData()
     {
-        currentCount++;
+        Navigation.NavigateTo("fetchdata");
+    }
+    private void NavigateToEncyclopedia()
+    {
+        Navigation.NavigateTo("encyclopedia");
+    }
+
+        private void NavigateToBible()
+    {
+        Navigation.NavigateTo("bible");
+    }
+        private void NavigateToRichdad()
+    {
+        Navigation.NavigateTo("richdad");
+    }
+
+    Book bible = new Book { Title = "The Bible", Author = "Unknown" };
+    Book americanpsycho = new Book { Title = "American Psycho", Author = "Bret Easton Ellis" };
+    void AddBookToBasket(Book book)
+    {
+        BasketService.AddBook(book);
+        Navigation.NavigateTo("fetchdata");
     }
 }
+

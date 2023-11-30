@@ -5,21 +5,37 @@
     flex-direction: column;
 }
 
+.page-title[b-dfoja3rne7] {
+    font-weight: bolder;
+    color: red;
+}
+
 main[b-dfoja3rne7] {
     flex: 1;
 }
 
-.sidebar[b-dfoja3rne7] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+.sidebar[b-dfoja3rne7] {                                          
+    background: rgb(255, 255, 255);
+}
+.basket-button[b-dfoja3rne7] {
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: white;    
+}
+
+button:hover[b-dfoja3rne7] {
+    background-color: rgb(198, 198, 198);
 }
 
 .top-row[b-dfoja3rne7] {
-    background-color: #f7f7f7;
+    background-color: #ebebeb;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
     .top-row[b-dfoja3rne7]  a, .top-row .btn-link[b-dfoja3rne7] {
@@ -69,19 +85,78 @@ main[b-dfoja3rne7] {
         padding-right: 1.5rem !important;
     }
 }
+
+.login-link[b-dfoja3rne7] {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-25[b-dfoja3rne7] {
+    background-color: #7b7b7b;
+    background-image: linear-gradient(#5e5e5e, #696969);
+    border: 1px solid #a9a9a9;
+    border-radius: 4px;
+    padding: 6px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .button-25:hover[b-dfoja3rne7] {
+    box-shadow: rgba(255, 255, 255, 0.3) inset, rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition-duration: .15s, .15s;
+  }
+  
+  .button-25:active[b-dfoja3rne7] {
+    box-shadow: rgba(0, 0, 0, 0.15) inset, rgba(0, 0, 0, 0.4);
+  }
+  
+  .button-25:disabled[b-dfoja3rne7] {
+    cursor: pointer;
+    opacity: .6;
+  }
+  
+  .button-25:disabled:active[b-dfoja3rne7] {
+    pointer-events: none;
+  }
+  
+  .button-25:disabled:hover[b-dfoja3rne7] {
+    box-shadow: none;
+  }
+
+  #login-link[b-dfoja3rne7] {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .display-username[b-dfoja3rne7] {
+    justify-self: flex-end;
+  }
 /* _content/TheLibrary/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-udfguqi0ve] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(117, 117, 117);
 }
 
 .top-row[b-udfguqi0ve] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgb(255, 255, 255);
+}
+
+.headerlogoimage[b-udfguqi0ve] {
+    height: 45px;
+    width: 100px;
+}
+
+.nav-scrollable[b-udfguqi0ve] {
+    background: #ffffff;
 }
 
 .navbar-brand[b-udfguqi0ve] {
     font-size: 1.1rem;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Vollkorn', serif;
 }
+
 
 .oi[b-udfguqi0ve] {
     width: 2rem;
@@ -91,6 +166,7 @@ main[b-dfoja3rne7] {
 }
 
 .nav-item[b-udfguqi0ve] {
+    font-weight: bolder;
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
 }
@@ -104,7 +180,7 @@ main[b-dfoja3rne7] {
     }
 
     .nav-item[b-udfguqi0ve]  a {
-        color: #d7d7d7;
+        color: #4e4e4e;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -113,13 +189,13 @@ main[b-dfoja3rne7] {
     }
 
 .nav-item[b-udfguqi0ve]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: rgb(0, 0, 0);
 }
 
-.nav-item[b-udfguqi0ve]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+.nav-item::deep :hover[b-udfguqi0ve] {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: rgb(0, 0, 0);
 }
 
 @media (min-width: 641px) {

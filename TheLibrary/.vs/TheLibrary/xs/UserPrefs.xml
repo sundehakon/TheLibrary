@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{572B46C9-FD33-4680-8EF7-AEDE5EC2D593}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Login.razor">
+    <Files>
+      <File FileName="Pages/Login.razor" Line="23" Column="37" />
+      <File FileName="wwwroot/script.js" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TheLibrary" expanded="True">
+            <Node name="TheLibrary" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Login.razor" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TheLibrary PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

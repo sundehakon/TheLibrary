@@ -1,6 +1,8 @@
 ﻿@inherits LayoutComponentBase
+@inject SharedDataService SharedDataService
+@inject NavigationManager NavigationManager
 
-<PageTitle>TheLibrary</PageTitle>
+<PageTitle>TheLibrary.com</PageTitle>
 
 <div class="page">
     <div class="sidebar">
@@ -9,8 +11,12 @@
 
     <main>
         <div class="top-row px-4">
-            
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <a href="/fetchdata">
+                <button class="button-25"><span class="oi oi-basket"></span> Basket</button>
+            </a>
+            <a href="https://github.com/sundehakon" target="_blank">
+                <img src="/images/github.png" alt="GitHub logo" class="github-image">
+            </a>
         </div>
 
         <article class="content px-4">
@@ -18,3 +24,24 @@
         </article>
     </main>
 </div>
+
+@code {
+    private void Navigate()
+    {
+        NavigationManager.NavigateTo("login");
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        if (SharedDataService.password)
+        {
+            string name = SharedDataService.Name;
+        }
+        else
+        {
+            string name = "";
+        }
+    }
+}

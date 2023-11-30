@@ -30,3 +30,4 @@
 /Users/sundehakon/Desktop/TheLibrary/TheLibrary/obj/Debug/net7.0/TheLibrary.pdb
 /Users/sundehakon/Desktop/TheLibrary/TheLibrary/obj/Debug/net7.0/TheLibrary.genruntimeconfig.cache
 /Users/sundehakon/Desktop/TheLibrary/TheLibrary/obj/Debug/net7.0/ref/TheLibrary.dll
+/Users/sundehakon/Desktop/TheLibrary/TheLibrary/bin/Debug/net7.0/users.json

@@ -1,15 +1,27 @@
 .navbar-toggler[b-udfguqi0ve] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(117, 117, 117);
 }
 
 .top-row[b-udfguqi0ve] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgb(255, 255, 255);
+}
+
+.headerlogoimage[b-udfguqi0ve] {
+    height: 45px;
+    width: 100px;
+}
+
+.nav-scrollable[b-udfguqi0ve] {
+    background: #ffffff;
 }
 
 .navbar-brand[b-udfguqi0ve] {
     font-size: 1.1rem;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Vollkorn', serif;
 }
+
 
 .oi[b-udfguqi0ve] {
     width: 2rem;
@@ -19,6 +31,7 @@
 }
 
 .nav-item[b-udfguqi0ve] {
+    font-weight: bolder;
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
 }
@@ -32,7 +45,7 @@
     }
 
     .nav-item[b-udfguqi0ve]  a {
-        color: #d7d7d7;
+        color: #4e4e4e;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -41,13 +54,13 @@
     }
 
 .nav-item[b-udfguqi0ve]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: rgb(0, 0, 0);
 }
 
-.nav-item[b-udfguqi0ve]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+.nav-item::deep :hover[b-udfguqi0ve] {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: rgb(0, 0, 0);
 }
 
 @media (min-width: 641px) {

@@ -1,27 +1,47 @@
 @page "/login"
+@using System;
 @using System.ComponentModel.DataAnnotations;
 @using Microsoft.AspNetCore.Components.Forms;
+@inject SharedDataService SharedDataService;
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+@inject BasketService BasketService
 
-<h3>Enter your details</h3>
+<div class="login-container-container">
+    <div class="login-container">
+        <h1 class="login-header">Log in</h1>
 
-<EditForm Model="userInput" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+        <EditForm Model="userInput" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-    <InputText id="name" @bind-Value="userInput.Name" placeholder="Name" />
-    <InputText id="password" @bind-Value="userInput.Password" placeholder="Password" />
-    <InputText id="phone" @bind-Value="userInput.PhoneNumber" placeholder="Phone number" />
-    <button type="submit">Submit</button>
-</EditForm>
+            <div class="form-group">
+                <label for="userInput.Name">Name</label>
+                <InputText id="name" @bind-Value="userInput.Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="userInput.Password">Password</label>
+                <InputText id="password" @bind-Value="userInput.Password" type="password" />
+            </div>
+
+            <div class="form-group">
+                <label for="userInput.PhoneNumber">Phone Number</label>
+                <InputText id="phone" @bind-Value="userInput.PhoneNumber" />
+            </div>
+
+            <div class="login-button">
+                <div class="login-button">
+                    <button type="submit" @onclick="HandleClick">Submit</button>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
 
 @code {
-    private UserInput userInput = new UserInput();
 
-    private void HandleValidSubmit()
-    {
-        var json = System.Text.Json.JsonSerializer.Serialize(userInput);
-        System.IO.File.AppendAllText("users.json", json);
-    }
+    bool password = false;
 
     public class UserInput
     {
@@ -32,6 +52,44 @@
         public string Password { get; set; }
 
         [Required]
-        public string PhoneNumber { get; set; } 
+        public string PhoneNumber { get; set; }
+
+        public List<Book> LoanedBooks { get; set; }
+    }
+
+    private UserInput userInput = new UserInput();
+
+    private async Task HandleClick()
+    {
+        userInput.LoanedBooks = BasketService.Books;
+        await HandleValidSubmit(); 
+        await JSRuntime.InvokeVoidAsync("showAlert", "You have successfully loaned your books! Check your sms for more information regarding loan expiration etc.");
+        SharedDataService.password = true;
+        SharedDataService.Name = userInput.Name; 
+
+        await Task.Delay(100).ContinueWith(_ => Navigation.NavigateTo("/", forceLoad: true));
+    }
+
+private async Task HandleValidSubmit()
+{
+    try
+    {
+
+    var json = System.Text.Json.JsonSerializer.Serialize(userInput);
+    await System.IO.File.WriteAllTextAsync("users.json",json);
+    BasketService.Books.Clear();
+    Console.WriteLine("HandleValidSubmit successful");
+
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error in HandleValidSubmit: {ex.Message}");
+    }
+}
+
+
+    private void NavigateToIndex()
+    {
+        Navigation.NavigateTo("/");
     }
 }
