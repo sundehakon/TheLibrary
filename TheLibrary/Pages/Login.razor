@@ -7,11 +7,28 @@
 @inject IJSRuntime JSRuntime
 @inject BasketService BasketService
 
+<h1>Your basket</h1>
+<div class="basket-main">
+@if (BasketService.Books.Count == 0)
+{
+    <p>Your basket is empty.</p>
+}
+else 
+{
+    <ul class="basket-list">
+        @foreach (var book in BasketService.Books)
+        {
+            <li>@book.Title by @book.Author</li>
+        }
+    </ul>
+}
+</div>
+
 <div class="login-container-container">
     <div class="login-container">
         <h1 class="login-header">Log in</h1>
 
-        <EditForm Model="userInput" OnValidSubmit="HandleValidSubmit">
+        <EditForm Model="userInput">
             <DataAnnotationsValidator />
             <ValidationSummary />
 
@@ -63,7 +80,7 @@
     {
         userInput.LoanedBooks = BasketService.Books;
         await HandleValidSubmit(); 
-        await JSRuntime.InvokeVoidAsync("showAlert", "You have successfully loaned your books! Check your sms for more information regarding loan expiration etc.");
+        await JSRuntime.InvokeVoidAsync("showAlert", "You have sucction regarding loan expiration etc.");
         SharedDataService.password = true;
         SharedDataService.Name = userInput.Name; 
 

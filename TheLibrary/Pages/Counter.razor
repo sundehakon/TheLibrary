@@ -22,7 +22,7 @@
             <p>"Rich Dad, Poor Dad"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(richdad)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -44,7 +44,7 @@
             <p>"Harry Potter - The Philosophers Stone"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(harrypotter)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -55,7 +55,7 @@
             <p>"The Red Book"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(redbook)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -66,7 +66,7 @@
             <p>"Elon Musk"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(elonmusk)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -77,7 +77,7 @@
             <p>"Force Of Nature"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(forceofnature)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -137,7 +137,13 @@
     }
 
     Book bible = new Book { Title = "The Bible", Author = "Unknown" };
+    Book richdad = new Book { Title = "Rich dad, Poor dad", Author = "Robert T. Kiyosaki" };
     Book americanpsycho = new Book { Title = "American Psycho", Author = "Bret Easton Ellis" };
+    Book harrypotter = new Book { Title = "Harry Potter - The Philsophers Stone", Author = "J.K Rowling" };
+    Book redbook = new Book { Title = "The Red Book", Author = "Carl Gustav Jung" };
+    Book elonmusk = new Book { Title = "Elon Musk", Author = "Ashlee Vance" };
+    Book forceofnature = new Book { Title = "Force of Nature", Author = "Jane Harper" };
+
     void AddBookToBasket(Book book)
     {
         BasketService.AddBook(book);

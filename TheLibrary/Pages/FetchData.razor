@@ -22,12 +22,13 @@ else
         }
     </ul>
 }
+</div>
 
 <div class="login-container-container">
     <div class="login-container">
         <h1 class="login-header">Enter your details</h1>
 
-        <EditForm Model="userInput" OnValidSubmit="HandleValidSubmit">
+        <EditForm Model="userInput">
             <DataAnnotationsValidator />
             <ValidationSummary />
 
@@ -47,28 +48,24 @@ else
             </div>
 
             <div class="login-button">
-                <div class="login-button">
-                    <button type="submit" @onclick="HandleClick">Confirm loan</button>
-                </div>
+                <button type="submit" @onclick="HandleClick">Confirm loan</button>
             </div>
         </EditForm>
     </div>
 </div>
-</div>
 
 @code {
-
     bool password = false;
 
     public class UserInput
     {
-        [Required]
+        [Required(ErrorMessage = "A name is required")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid phone number")]
         public string PhoneNumber { get; set; }
 
         public List<Book> LoanedBooks { get; set; }
@@ -79,35 +76,31 @@ else
     private async Task HandleClick()
     {
         userInput.LoanedBooks = BasketService.Books;
-        await HandleValidSubmit(); 
-        await JSRuntime.InvokeVoidAsync("showAlert", "You have successfully loaned your books! Check your sms for more information regarding loan expiration etc.");
+        await HandleValidSubmit();
+        await JSRuntime.InvokeVoidAsync("showAlert", "You have successfully loaned your books! Check your SMS for more information regarding loan expiration, etc.");
         SharedDataService.password = true;
-        SharedDataService.Name = userInput.Name; 
+        SharedDataService.Name = userInput.Name;
 
         await Task.Delay(100).ContinueWith(_ => Navigation.NavigateTo("/", forceLoad: true));
     }
 
-private async Task HandleValidSubmit()
-{
-    try
+    private async Task HandleValidSubmit()
     {
-
-    var json = System.Text.Json.JsonSerializer.Serialize(userInput);
-    await System.IO.File.WriteAllTextAsync("users.json",json);
-    BasketService.Books.Clear();
-    Console.WriteLine("HandleValidSubmit successful");
-
+        try
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(userInput);
+            await System.IO.File.WriteAllTextAsync("users.json", json);
+            BasketService.Books.Clear();
+            Console.WriteLine("HandleValidSubmit successful");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in HandleValidSubmit: {ex.Message}");
+        }
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error in HandleValidSubmit: {ex.Message}");
-    }
-}
-
 
     private void NavigateToIndex()
     {
         Navigation.NavigateTo("/");
     }
-
 }
