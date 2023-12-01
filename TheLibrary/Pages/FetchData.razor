@@ -22,6 +22,12 @@ else
         }
     </ul>
 }
+
+    <div class="clearbasket-button">
+        <button @onclick="ClearTheBasketButton">
+            <span class="oi oi-trash"></span>
+        </button>
+    </div>
 </div>
 
 <div class="login-container-container">
@@ -89,7 +95,7 @@ else
         try
         {
             var json = System.Text.Json.JsonSerializer.Serialize(userInput);
-            await System.IO.File.WriteAllTextAsync("users.json", json);
+            await System.IO.File.WriteAllTextAsync(".gitignore/users.json", json);
             BasketService.Books.Clear();
             Console.WriteLine("HandleValidSubmit successful");
         }
@@ -102,5 +108,10 @@ else
     private void NavigateToIndex()
     {
         Navigation.NavigateTo("/");
+    }
+
+    private void ClearTheBasketButton()
+    {
+        BasketService.Books.Clear();
     }
 }
