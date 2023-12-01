@@ -26,6 +26,8 @@
 </div>
 
 @code {
+    private string name = "";
+
     private void Navigate()
     {
         NavigationManager.NavigateTo("login");
@@ -37,11 +39,8 @@
 
         if (SharedDataService.password)
         {
-            string name = SharedDataService.Name;
-        }
-        else
-        {
-            string name = "";
+            name = SharedDataService.Name;
+            StateHasChanged();
         }
     }
 }

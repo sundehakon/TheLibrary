@@ -7,8 +7,10 @@
 @inject IJSRuntime JSRuntime
 @inject BasketService BasketService
 
-<h1>Your basket</h1>
+<div class="fetchdata-container">
 <div class="basket-main">
+    <h1 class="basket-title">Your basket</h1>
+    <br>
 @if (BasketService.Books.Count == 0)
 {
     <p>Your basket is empty.</p>
@@ -59,10 +61,10 @@ else
         </EditForm>
     </div>
 </div>
+</div>
 
 @code {
     bool password = false;
-
     public class UserInput
     {
         [Required(ErrorMessage = "A name is required")]
@@ -78,7 +80,6 @@ else
     }
 
     private UserInput userInput = new UserInput();
-
     private async Task HandleClick()
     {
         userInput.LoanedBooks = BasketService.Books;
@@ -95,7 +96,7 @@ else
         try
         {
             var json = System.Text.Json.JsonSerializer.Serialize(userInput);
-            await System.IO.File.WriteAllTextAsync(".gitignore/users.json", json);
+            await System.IO.File.WriteAllTextAsync("users/users.json", json);
             BasketService.Books.Clear();
             Console.WriteLine("HandleValidSubmit successful");
         }

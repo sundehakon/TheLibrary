@@ -113,15 +113,8 @@ a, .btn-link {
     align-items: center;
 }
 
-.mainpage-image {
-    display: flex;
-    padding: 50px;
-    padding-right: 200px;
-    width: 50%;
-    height: 900px;
-}
-
 .maintext {
+    margin-top: 150px;
     width: 900px;
 }
 
@@ -274,4 +267,11 @@ label {
     border-radius: 30px;
     width: 50px;
     height: 50px;
+    margin-top: 15px;
+   }
+
+   .fetchdata-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
    }
