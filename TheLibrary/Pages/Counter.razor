@@ -88,7 +88,7 @@
             <p>"The Communist Manifesto"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(communistmanifesto)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -99,7 +99,7 @@
             <p>"1984"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(nineteenfourtyeight)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -110,7 +110,7 @@
             <p>"Dear Martin"</p>
         </div>
         <div class="button-25">
-            <button @onclick="NavigateToFetchData">
+            <button @onclick="() => AddBookToBasket(dearmartin)">
                 <span class="oi oi-basket" aria-hidden="true"></span> Add to basket
             </button>
         </div>
@@ -143,6 +143,9 @@
     Book redbook = new Book { Title = "The Red Book", Author = "Carl Gustav Jung" };
     Book elonmusk = new Book { Title = "Elon Musk", Author = "Ashlee Vance" };
     Book forceofnature = new Book { Title = "Force of Nature", Author = "Jane Harper" };
+    Book communistmanifesto = new Book { Title = "The Communist Manifesto", Author = "Karl Marx & Friedrick Engels" };
+    Book nineteenfourtyeight = new Book { Title = "1948", Author = "George Orwell" };
+    Book dearmartin = new Book { Title = "Dear Martin", Author = "Nic Stone" };
 
     void AddBookToBasket(Book book)
     {
